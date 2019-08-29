@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5E12B54E2316ECA80091A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12B54D2316ECA80091A7CF /* AppDelegate.swift */; };
-		5E12B5502316ECA80091A7CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12B54F2316ECA80091A7CF /* ViewController.swift */; };
 		5E12B5532316ECA80091A7CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E12B5512316ECA80091A7CF /* Main.storyboard */; };
 		5E12B5552316ECAA0091A7CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E12B5542316ECAA0091A7CF /* Assets.xcassets */; };
 		5E12B5582316ECAA0091A7CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E12B5562316ECAA0091A7CF /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		5E12B54A2316ECA80091A7CF /* DZOtus_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZOtus_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E12B54D2316ECA80091A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E12B54F2316ECA80091A7CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E12B5522316ECA80091A7CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E12B5542316ECAA0091A7CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E12B5572316ECAA0091A7CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				5E12B54D2316ECA80091A7CF /* AppDelegate.swift */,
-				5E12B54F2316ECA80091A7CF /* ViewController.swift */,
 				5E12B5512316ECA80091A7CF /* Main.storyboard */,
 				5E17D3C42318090D00D41893 /* Detail.storyboard */,
 				5E17D3C7231809DE00D41893 /* ComponentView.xib */,
@@ -150,7 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E17D3CA23180A3400D41893 /* ComponentView.swift in Sources */,
-				5E12B5502316ECA80091A7CF /* ViewController.swift in Sources */,
 				5E12B54E2316ECA80091A7CF /* AppDelegate.swift in Sources */,
 				5E17D3C32317F40900D41893 /* CustomButton.swift in Sources */,
 			);
