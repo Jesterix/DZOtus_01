@@ -21,7 +21,7 @@ class ComponentView : UIView {
     }
     
     func configure() {
-        if let nib = Bundle.main.loadNibNamed("ComponentView"/*String(describing: self)*/, owner: nil, options: nil),
+        if let nib = Bundle.main.loadNibNamed("ComponentView", owner: nil, options: nil),
             let view = nib[0] as? UIView {
             
             addSubview(view)
