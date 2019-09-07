@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile VC-->
         <scene sceneID="oTg-T3-UOs">
             <objects>
-                <viewController id="k7d-qg-B23" sceneMemberID="viewController">
+                <viewController id="k7d-qg-B23" customClass="ProfileVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEa-Ut-BuG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,10 +32,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6L-Fs-jmB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6L-Fs-jmB">
                                 <rect key="frame" x="159.5" y="374" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -49,17 +49,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Hw-29-VR3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="f5I-bm-gyv"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Profile VC" id="f5I-bm-gyv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSU-NQ-2oW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2079.7101449275365" y="710.49107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--BenchmarkVC-->
         <scene sceneID="TRj-LB-hSD">
             <objects>
-                <viewController id="cUN-22-uFh" sceneMemberID="viewController">
+                <viewController id="cUN-22-uFh" customClass="BenchmarkVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQg-Gh-gHX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +67,7 @@
                                 <rect key="frame" x="182.5" y="432.5" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benchmark Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jC-u5-oHd">
-                                <rect key="frame" x="141" y="375" width="133" height="21"/>
+                                <rect key="frame" x="140.5" y="375" width="133" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -111,12 +110,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7u-nu-uYr">
+                                <rect key="frame" x="159.5" y="531" width="95" height="30"/>
+                                <state key="normal" title="To second VC"/>
+                                <connections>
+                                    <segue destination="62g-jd-xiC" kind="show" id="2ke-m9-XUV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FbV-pU-0rh" firstAttribute="centerX" secondItem="ibl-CU-FUZ" secondAttribute="centerX" id="E14-n8-yJA"/>
                             <constraint firstItem="ibl-CU-FUZ" firstAttribute="top" secondItem="FbV-pU-0rh" secondAttribute="bottom" constant="33" id="HS7-kU-Ex2"/>
+                            <constraint firstItem="a7u-nu-uYr" firstAttribute="centerX" secondItem="ibl-CU-FUZ" secondAttribute="centerX" id="Jcs-oc-j0q"/>
                             <constraint firstItem="ibl-CU-FUZ" firstAttribute="centerY" secondItem="JXx-pS-7g4" secondAttribute="centerY" id="KRs-iw-sTO"/>
+                            <constraint firstItem="a7u-nu-uYr" firstAttribute="top" secondItem="ibl-CU-FUZ" secondAttribute="bottom" constant="8" id="pS5-k9-sgF"/>
                             <constraint firstItem="ibl-CU-FUZ" firstAttribute="centerX" secondItem="JXx-pS-7g4" secondAttribute="centerX" id="xeH-4B-Y6Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLa-mx-Glq"/>
@@ -126,6 +134,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRv-ps-MQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2079.7101449275365" y="-571.20535714285711"/>
+        </scene>
+        <!--Second FeedVC-->
+        <scene sceneID="Ehi-ic-Zk6">
+            <objects>
+                <viewController id="62g-jd-xiC" customClass="SecondFeedVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j5L-hR-0uS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-wk-RHf">
+                                <rect key="frame" x="124.5" y="413" width="165" height="30"/>
+                                <state key="normal" title="To the third VC normally"/>
+                                <connections>
+                                    <segue destination="6pz-1C-HfA" kind="show" id="fAk-Ft-HRS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25k-Th-7ox">
+                                <rect key="frame" x="74.5" y="455.5" width="265" height="30"/>
+                                <state key="normal" title="To the third VC with stack modification"/>
+                                <connections>
+                                    <segue destination="6pz-1C-HfA" kind="show" identifier="stackModifySegue" id="nIy-X7-D5k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="25k-Th-7ox" firstAttribute="centerY" secondItem="I1p-fz-UFK" secondAttribute="centerY" constant="20" id="IoZ-qQ-GVu"/>
+                            <constraint firstItem="rP1-wk-RHf" firstAttribute="centerY" secondItem="j5L-hR-0uS" secondAttribute="centerY" constant="-20" id="fRW-fS-2xz"/>
+                            <constraint firstItem="25k-Th-7ox" firstAttribute="centerX" secondItem="I1p-fz-UFK" secondAttribute="centerX" id="lCk-f9-2Ld"/>
+                            <constraint firstItem="rP1-wk-RHf" firstAttribute="centerX" secondItem="j5L-hR-0uS" secondAttribute="centerX" id="tG4-k0-Lye"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I1p-fz-UFK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Jg-9v-Ico" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="-571"/>
+        </scene>
+        <!--Third FeedVC-->
+        <scene sceneID="KEQ-KO-vsv">
+            <objects>
+                <viewController id="6pz-1C-HfA" customClass="ThirdFeedVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kAV-M5-yve">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Feed VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmy-e5-kPg">
+                                <rect key="frame" x="152.5" y="437.5" width="109.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nmy-e5-kPg" firstAttribute="centerY" secondItem="kAV-M5-yve" secondAttribute="centerY" id="IZN-bL-cYz"/>
+                            <constraint firstItem="nmy-e5-kPg" firstAttribute="centerX" secondItem="kAV-M5-yve" secondAttribute="centerX" id="r2Z-Dn-dzu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sj1-qG-q5f"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uz5-8P-Gka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3748" y="-571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CMx-Db-Mkq">
@@ -243,4 +315,7 @@
             <point key="canvasLocation" x="410" y="1211"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nIy-X7-D5k"/>
+    </inferredMetricsTieBreakers>
 </document>
