@@ -88,30 +88,34 @@
             </objects>
             <point key="canvasLocation" x="3749" y="153"/>
         </scene>
-        <!--View Controller-->
+        <!--FeedVC-->
         <scene sceneID="PiP-go-uDr">
             <objects>
-                <viewController id="TVD-SJ-wqF" sceneMemberID="viewController">
+                <viewController id="TVD-SJ-wqF" customClass="FeedVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXx-pS-7g4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ibl-CU-FUZ">
-                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <rect key="frame" x="257" y="93.5" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.76862745099999996" green="0.84705882349999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="GMz-65-Qnh"/>
-                                    <constraint firstAttribute="width" secondItem="ibl-CU-FUZ" secondAttribute="height" multiplier="1:1" id="bju-km-OCr"/>
+                                    <constraint firstAttribute="width" secondItem="ibl-CU-FUZ" secondAttribute="height" multiplier="1:1" id="LCj-2M-zec"/>
+                                    <constraint firstAttribute="width" constant="30" id="j3l-Ak-gLq"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbV-pU-0rh">
-                                <rect key="frame" x="165" y="319" width="84" height="21"/>
+                                <rect key="frame" x="165" y="98" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lja-xA-Z03">
+                                <rect key="frame" x="20" y="127" width="374" height="638"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7u-nu-uYr">
-                                <rect key="frame" x="159.5" y="531" width="95" height="30"/>
+                                <rect key="frame" x="159.5" y="773" width="95" height="30"/>
                                 <state key="normal" title="To second VC"/>
                                 <connections>
                                     <segue destination="62g-jd-xiC" kind="show" id="2ke-m9-XUV"/>
@@ -120,16 +124,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FbV-pU-0rh" firstAttribute="centerX" secondItem="ibl-CU-FUZ" secondAttribute="centerX" id="E14-n8-yJA"/>
-                            <constraint firstItem="ibl-CU-FUZ" firstAttribute="top" secondItem="FbV-pU-0rh" secondAttribute="bottom" constant="33" id="HS7-kU-Ex2"/>
-                            <constraint firstItem="a7u-nu-uYr" firstAttribute="centerX" secondItem="ibl-CU-FUZ" secondAttribute="centerX" id="Jcs-oc-j0q"/>
-                            <constraint firstItem="ibl-CU-FUZ" firstAttribute="centerY" secondItem="JXx-pS-7g4" secondAttribute="centerY" id="KRs-iw-sTO"/>
-                            <constraint firstItem="a7u-nu-uYr" firstAttribute="top" secondItem="ibl-CU-FUZ" secondAttribute="bottom" constant="8" id="pS5-k9-sgF"/>
-                            <constraint firstItem="ibl-CU-FUZ" firstAttribute="centerX" secondItem="JXx-pS-7g4" secondAttribute="centerX" id="xeH-4B-Y6Q"/>
+                            <constraint firstItem="FbV-pU-0rh" firstAttribute="top" secondItem="TLa-mx-Glq" secondAttribute="top" constant="10" id="0xT-OS-qGh"/>
+                            <constraint firstItem="FbV-pU-0rh" firstAttribute="centerX" secondItem="JXx-pS-7g4" secondAttribute="centerX" id="7BB-06-aCh"/>
+                            <constraint firstItem="lja-xA-Z03" firstAttribute="top" secondItem="FbV-pU-0rh" secondAttribute="bottom" constant="8" id="KCT-2Q-AGJ"/>
+                            <constraint firstItem="a7u-nu-uYr" firstAttribute="top" secondItem="lja-xA-Z03" secondAttribute="bottom" constant="8" id="KlR-H5-Fnu"/>
+                            <constraint firstItem="TLa-mx-Glq" firstAttribute="trailing" secondItem="lja-xA-Z03" secondAttribute="trailing" constant="20" id="SBg-DO-qn6"/>
+                            <constraint firstItem="ibl-CU-FUZ" firstAttribute="centerY" secondItem="FbV-pU-0rh" secondAttribute="centerY" id="Se4-gR-Zod"/>
+                            <constraint firstItem="a7u-nu-uYr" firstAttribute="centerX" secondItem="JXx-pS-7g4" secondAttribute="centerX" id="TbJ-Uk-MDG"/>
+                            <constraint firstItem="lja-xA-Z03" firstAttribute="leading" secondItem="TLa-mx-Glq" secondAttribute="leading" constant="20" id="bWf-So-ygi"/>
+                            <constraint firstItem="TLa-mx-Glq" firstAttribute="bottom" secondItem="a7u-nu-uYr" secondAttribute="bottom" constant="10" id="bkO-uC-7Lf"/>
+                            <constraint firstItem="ibl-CU-FUZ" firstAttribute="leading" secondItem="FbV-pU-0rh" secondAttribute="trailing" constant="8" id="nTg-X6-aER"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLa-mx-Glq"/>
                     </view>
                     <navigationItem key="navigationItem" id="vwM-te-94M"/>
+                    <connections>
+                        <outlet property="tableView" destination="lja-xA-Z03" id="AsN-hA-Znd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRv-ps-MQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
