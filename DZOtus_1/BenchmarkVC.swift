@@ -9,7 +9,11 @@
 import UIKit
 
 class BenchmarkVC: UIViewController {
-
+    
+    private let chessLayout = ChessLayout()
+    private var isChess = true
+    private var defaultLayout : UICollectionViewLayout?
+    
     var dataProvider = BenchmarkDataSource(nibName: nil, bundle: nil)
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,6 +27,10 @@ class BenchmarkVC: UIViewController {
         collectionView.delegate = dataProvider
         collectionView.dataSource = dataProvider
         dataProvider.benchmarkCollectionView = collectionView
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(changeLayout))
+        
+        defaultLayout = collectionView.collectionViewLayout
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,4 +42,23 @@ class BenchmarkVC: UIViewController {
 
     }
 
+    
+    @objc func changeLayout() {
+        isChess.toggle()
+        if isChess {
+            chessLayout.delegate = self
+            collectionView.setCollectionViewLayout(chessLayout, animated: true)
+        } else {
+            guard let layout = defaultLayout else { return }
+            collectionView.setCollectionViewLayout(layout, animated: true)
+        }
+        
+    }
+    
+}
+
+extension BenchmarkVC : CustomCollectionViewDelegate {
+    func numberOfItemsInCollectionView() -> Int {
+        return dataProvider.timerManagers.count
+    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E09757523367D5000FAF3A0 /* ChessLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09757423367D5000FAF3A0 /* ChessLayout.swift */; };
 		5E0E9D44232FC86A000FBEA3 /* BenchmarkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E9D43232FC869000FBEA3 /* BenchmarkDataSource.swift */; };
 		5E12B54E2316ECA80091A7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12B54D2316ECA80091A7CF /* AppDelegate.swift */; };
 		5E12B5532316ECA80091A7CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E12B5512316ECA80091A7CF /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E09757423367D5000FAF3A0 /* ChessLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChessLayout.swift; path = ../ChessLayout.swift; sourceTree = "<group>"; };
 		5E0E9D43232FC869000FBEA3 /* BenchmarkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkDataSource.swift; sourceTree = "<group>"; };
 		5E12B54A2316ECA80091A7CF /* DZOtus_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZOtus_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E12B54D2316ECA80091A7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E097576233680AF00FAF3A0 /* CustomCollectionViewLayouts */ = {
+			isa = PBXGroup;
+			children = (
+				5E09757423367D5000FAF3A0 /* ChessLayout.swift */,
+			);
+			path = CustomCollectionViewLayouts;
+			sourceTree = "<group>";
+		};
 		5E12B5412316ECA70091A7CF = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 			children = (
 				5E91A5512323B0FE008D1355 /* BenchmarkVC.swift */,
 				5E0E9D43232FC869000FBEA3 /* BenchmarkDataSource.swift */,
+				5E097576233680AF00FAF3A0 /* CustomCollectionViewLayouts */,
 				5E2E17C32330B43700BFCE47 /* TimerManager.swift */,
 				5EC404AD232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift */,
 			);
@@ -211,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E09757523367D5000FAF3A0 /* ChessLayout.swift in Sources */,
 				5E3024C1232A88D900550C7C /* FeedVC.swift in Sources */,
 				5E0E9D44232FC86A000FBEA3 /* BenchmarkDataSource.swift in Sources */,
 				5EC404AE232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift in Sources */,
