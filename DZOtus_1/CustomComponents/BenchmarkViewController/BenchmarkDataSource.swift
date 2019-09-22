@@ -54,7 +54,7 @@ extension BenchmarkDataSource: UICollectionViewDataSource {
     func fillStackViewWithSomeViews() -> [UIView] {
         var stackViewContent: [UIView] = []
         let numberOfViews = 3
-        let colors = [UIColor.green,UIColor.blue,UIColor.orange]
+        let colors = [UIColor.green, UIColor.blue, UIColor.orange]
         let label = UILabel()
         label.text = "StackView"
         stackViewContent.append(label)
@@ -71,7 +71,7 @@ extension BenchmarkDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackPlusTimerCell", for: indexPath) as! StackAndTimerCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackPlusTimerCell", for: indexPath) as? StackAndTimerCollectionViewCell else { return UICollectionViewCell() }
         
         cell.timerLabel.text = formatter.string(from: timerManagers[indexPath.row].currentTime)
         

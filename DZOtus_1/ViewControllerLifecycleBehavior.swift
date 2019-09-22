@@ -50,8 +50,8 @@ final class DateTimerBehavior: ViewControllerLifecycleBehavior {
     }
     
     func beforeDisappearing(_ viewController: UIViewController) {
-        guard let existingTimer = timer else { return }
-        existingTimer.invalidate()
+        timer?.invalidate()
+        timer = nil
     }
     
     @objc func runTimed(){

@@ -33,6 +33,7 @@ class TimerManager {
     
     func stopTimer(){
         timer?.invalidate()
+        timer = nil
         timerIsOn = false
     }
     
