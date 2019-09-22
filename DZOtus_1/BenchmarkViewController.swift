@@ -14,7 +14,7 @@ class BenchmarkViewController: UIViewController {
     private var isChess = true
     private var defaultLayout: UICollectionViewLayout?
     
-    var dataProvider = BenchmarkDataSource(nibName: nil, bundle: nil)
+    var dataProvider = BenchmarkDataSource()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,9 +24,10 @@ class BenchmarkViewController: UIViewController {
         // committed behaviors cause they are not needed in next homework
 //        addBehaviors(behaviors: [DateTimerBehavior()])
         
-        collectionView.delegate = dataProvider
-        collectionView.dataSource = dataProvider
+        dataProvider.setup()
         dataProvider.benchmarkCollectionView = collectionView
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(changeLayout))
         
@@ -38,8 +39,10 @@ class BenchmarkViewController: UIViewController {
             timer.stopTimer()
             timer.currentTime = 0
         }
-        dataProvider.benchmarkCollectionView?.reloadData()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
     }
 
     
@@ -52,7 +55,6 @@ class BenchmarkViewController: UIViewController {
             guard let layout = defaultLayout else { return }
             collectionView.setCollectionViewLayout(layout, animated: true)
         }
-        
     }
     
 }
@@ -61,4 +63,31 @@ extension BenchmarkViewController: CustomCollectionViewDelegate {
     func numberOfItemsInCollectionView() -> Int {
         return dataProvider.timerManagers.count
     }
+}
+
+extension BenchmarkViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataProvider.timerManagers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackPlusTimerCell", for: indexPath) as? StackAndTimerCollectionViewCell else { return UICollectionViewCell() }
+        if let timerLabel = cell.timerLabel {
+            timerLabel.text = dataProvider.formatter.string(from: dataProvider.timerManagers[indexPath.row].currentTime)
+        }
+        return cell
+    }
+    
+}
+
+
+extension BenchmarkViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if dataProvider.timerManagers[indexPath.row].timerIsOn {
+            dataProvider.timerManagers[indexPath.row].stopTimer()
+        } else {
+            dataProvider.timerManagers[indexPath.row].startTimer()
+        }
+    }
+
 }

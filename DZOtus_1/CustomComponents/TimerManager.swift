@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TimerManagerDelegate {
-    func timerChanged()
+    func timerChanged(atIndex: Int)
 }
 
 class TimerManager {
@@ -28,7 +28,7 @@ class TimerManager {
     
     @objc func onFire(){
         currentTime += 1
-        delegate?.timerChanged()
+        delegate?.timerChanged(atIndex: index)
     }
     
     func stopTimer(){
