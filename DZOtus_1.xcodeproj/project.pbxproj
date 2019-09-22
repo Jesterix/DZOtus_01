@@ -18,14 +18,14 @@
 		5E17D3C8231809DE00D41893 /* ComponentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E17D3C7231809DE00D41893 /* ComponentView.xib */; };
 		5E17D3CA23180A3400D41893 /* ComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E17D3C923180A3400D41893 /* ComponentView.swift */; };
 		5E2E17C42330B43700BFCE47 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E17C32330B43700BFCE47 /* TimerManager.swift */; };
-		5E3024C1232A88D900550C7C /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3024C0232A88D900550C7C /* FeedVC.swift */; };
+		5E3024C1232A88D900550C7C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3024C0232A88D900550C7C /* FeedViewController.swift */; };
 		5E3024C3232A89AC00550C7C /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3024C2232A89AC00550C7C /* TableDataProvider.swift */; };
 		5E3024C5232A922800550C7C /* SessionSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3024C4232A922800550C7C /* SessionSummaryViewController.swift */; };
 		5E91A5322320374F008D1355 /* ViewControllerLifecycleBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5312320374F008D1355 /* ViewControllerLifecycleBehavior.swift */; };
-		5E91A5522323B0FE008D1355 /* BenchmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5512323B0FE008D1355 /* BenchmarkVC.swift */; };
-		5E91A5542323B7EA008D1355 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5532323B7EA008D1355 /* ProfileVC.swift */; };
-		5E91A5562323D563008D1355 /* ThirdFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5552323D563008D1355 /* ThirdFeedVC.swift */; };
-		5E91A5582323D5E8008D1355 /* SecondFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5572323D5E8008D1355 /* SecondFeedVC.swift */; };
+		5E91A5522323B0FE008D1355 /* BenchmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5512323B0FE008D1355 /* BenchmarkViewController.swift */; };
+		5E91A5542323B7EA008D1355 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5532323B7EA008D1355 /* ProfileViewController.swift */; };
+		5E91A5562323D563008D1355 /* ThirdFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5552323D563008D1355 /* ThirdFeedViewController.swift */; };
+		5E91A5582323D5E8008D1355 /* SecondFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5572323D5E8008D1355 /* SecondFeedViewController.swift */; };
 		5EC404AE232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC404AD232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,14 +43,14 @@
 		5E17D3C7231809DE00D41893 /* ComponentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentView.xib; sourceTree = "<group>"; };
 		5E17D3C923180A3400D41893 /* ComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentView.swift; sourceTree = "<group>"; };
 		5E2E17C32330B43700BFCE47 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimerManager.swift; path = ../TimerManager.swift; sourceTree = "<group>"; };
-		5E3024C0232A88D900550C7C /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		5E3024C0232A88D900550C7C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5E3024C2232A89AC00550C7C /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		5E3024C4232A922800550C7C /* SessionSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSummaryViewController.swift; sourceTree = "<group>"; };
 		5E91A5312320374F008D1355 /* ViewControllerLifecycleBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleBehavior.swift; sourceTree = "<group>"; };
-		5E91A5512323B0FE008D1355 /* BenchmarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenchmarkVC.swift; path = ../../BenchmarkVC.swift; sourceTree = "<group>"; };
-		5E91A5532323B7EA008D1355 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		5E91A5552323D563008D1355 /* ThirdFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdFeedVC.swift; sourceTree = "<group>"; };
-		5E91A5572323D5E8008D1355 /* SecondFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFeedVC.swift; sourceTree = "<group>"; };
+		5E91A5512323B0FE008D1355 /* BenchmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenchmarkViewController.swift; path = ../../BenchmarkViewController.swift; sourceTree = "<group>"; };
+		5E91A5532323B7EA008D1355 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5E91A5552323D563008D1355 /* ThirdFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdFeedViewController.swift; sourceTree = "<group>"; };
+		5E91A5572323D5E8008D1355 /* SecondFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFeedViewController.swift; sourceTree = "<group>"; };
 		5EC404AD232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StackAndTimerCollectionViewCell.swift; path = ../StackAndTimerCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,7 @@
 		5E2E17C52330B45F00BFCE47 /* BenchmarkViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5E91A5512323B0FE008D1355 /* BenchmarkVC.swift */,
+				5E91A5512323B0FE008D1355 /* BenchmarkViewController.swift */,
 				5E0E9D43232FC869000FBEA3 /* BenchmarkDataSource.swift */,
 				5E097576233680AF00FAF3A0 /* CustomCollectionViewLayouts */,
 				5E2E17C32330B43700BFCE47 /* TimerManager.swift */,
@@ -133,9 +133,9 @@
 			children = (
 				5E3024C2232A89AC00550C7C /* TableDataProvider.swift */,
 				5E3024C4232A922800550C7C /* SessionSummaryViewController.swift */,
-				5E3024C0232A88D900550C7C /* FeedVC.swift */,
-				5E91A5552323D563008D1355 /* ThirdFeedVC.swift */,
-				5E91A5572323D5E8008D1355 /* SecondFeedVC.swift */,
+				5E3024C0232A88D900550C7C /* FeedViewController.swift */,
+				5E91A5552323D563008D1355 /* ThirdFeedViewController.swift */,
+				5E91A5572323D5E8008D1355 /* SecondFeedViewController.swift */,
 			);
 			path = FeedViewController;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 		5EC404AC232FB8C90004FE3D /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5E91A5532323B7EA008D1355 /* ProfileVC.swift */,
+				5E91A5532323B7EA008D1355 /* ProfileViewController.swift */,
 				5E17D3C22317F40900D41893 /* CustomButton.swift */,
 			);
 			path = ProfileViewController;
@@ -223,19 +223,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E09757523367D5000FAF3A0 /* ChessLayout.swift in Sources */,
-				5E3024C1232A88D900550C7C /* FeedVC.swift in Sources */,
+				5E3024C1232A88D900550C7C /* FeedViewController.swift in Sources */,
 				5E0E9D44232FC86A000FBEA3 /* BenchmarkDataSource.swift in Sources */,
 				5EC404AE232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift in Sources */,
-				5E91A5542323B7EA008D1355 /* ProfileVC.swift in Sources */,
+				5E91A5542323B7EA008D1355 /* ProfileViewController.swift in Sources */,
 				5E17D3CA23180A3400D41893 /* ComponentView.swift in Sources */,
 				5E2E17C42330B43700BFCE47 /* TimerManager.swift in Sources */,
-				5E91A5522323B0FE008D1355 /* BenchmarkVC.swift in Sources */,
+				5E91A5522323B0FE008D1355 /* BenchmarkViewController.swift in Sources */,
 				5E12B54E2316ECA80091A7CF /* AppDelegate.swift in Sources */,
 				5E3024C5232A922800550C7C /* SessionSummaryViewController.swift in Sources */,
 				5E3024C3232A89AC00550C7C /* TableDataProvider.swift in Sources */,
 				5E17D3C32317F40900D41893 /* CustomButton.swift in Sources */,
-				5E91A5562323D563008D1355 /* ThirdFeedVC.swift in Sources */,
-				5E91A5582323D5E8008D1355 /* SecondFeedVC.swift in Sources */,
+				5E91A5562323D563008D1355 /* ThirdFeedViewController.swift in Sources */,
+				5E91A5582323D5E8008D1355 /* SecondFeedViewController.swift in Sources */,
 				5E91A5322320374F008D1355 /* ViewControllerLifecycleBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

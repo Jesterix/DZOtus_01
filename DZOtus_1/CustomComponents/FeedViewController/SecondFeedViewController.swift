@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondFeedVC: UIViewController {
+class SecondFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class SecondFeedVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "stackModifySegue", let vc = segue.destination as? ThirdFeedVC else { return }
+        guard segue.identifier == "stackModifySegue", let vc = segue.destination as? ThirdFeedViewController else { return }
         vc.shouldPopToRoot = true
     }
     

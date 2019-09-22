@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class ProfileViewController: UIViewController {
 
     var isBlackBackground: Bool {
         if self.view.backgroundColor == UIColor.black {

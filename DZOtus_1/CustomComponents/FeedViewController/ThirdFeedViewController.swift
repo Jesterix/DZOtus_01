@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdFeedVC: UIViewController {
+class ThirdFeedViewController: UIViewController {
 
     var shouldPopToRoot = false
     
@@ -19,7 +19,7 @@ class ThirdFeedVC: UIViewController {
         
         if shouldPopToRoot {
             if let controllers = navigationController?.viewControllers {
-                let newControllers = controllers.filter { !($0 is SecondFeedVC) }
+                let newControllers = controllers.filter { !($0 is SecondFeedViewController) }
                 navigationController?.setViewControllers(newControllers, animated: true)
             }
         }

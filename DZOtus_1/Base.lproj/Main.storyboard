@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="orD-bV-gpO">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,13 +9,13 @@
         <!--Profile VC-->
         <scene sceneID="oTg-T3-UOs">
             <objects>
-                <viewController id="k7d-qg-B23" customClass="ProfileVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k7d-qg-B23" customClass="ProfileViewController" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEa-Ut-BuG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LI-k3-xmw" customClass="CustomButton" customModule="DZOtus_1" customModuleProvider="target">
-                                <rect key="frame" x="15" y="433" width="384" height="30"/>
+                                <rect key="frame" x="15" y="285" width="570" height="30"/>
                                 <state key="normal" title="designable button">
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -33,7 +29,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6L-Fs-jmB">
-                                <rect key="frame" x="159.5" y="374" width="95" height="21"/>
+                                <rect key="frame" x="252.5" y="226" width="95" height="21"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -55,22 +51,22 @@
             </objects>
             <point key="canvasLocation" x="2079.7101449275365" y="710.49107142857144"/>
         </scene>
-        <!--BenchmarkVC-->
+        <!--Benchmark View Controller-->
         <scene sceneID="TRj-LB-hSD">
             <objects>
-                <viewController id="cUN-22-uFh" customClass="BenchmarkVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cUN-22-uFh" customClass="BenchmarkViewController" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQg-Gh-gHX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benchmark Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jC-u5-oHd">
-                                <rect key="frame" x="20" y="109" width="315" height="21"/>
+                                <rect key="frame" x="20" y="85" width="501" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="167-bq-dtA">
-                                <rect key="frame" x="0.0" y="155" width="414" height="658"/>
+                                <rect key="frame" x="0.0" y="131" width="600" height="420"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="njV-B9-2CT">
                                     <size key="itemSize" width="202" height="153"/>
@@ -106,7 +102,7 @@
                                 </cells>
                             </collectionView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-4k-CKs">
-                                <rect key="frame" x="345" y="104" width="51" height="31"/>
+                                <rect key="frame" x="531" y="80" width="51" height="31"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,16 +128,16 @@
             </objects>
             <point key="canvasLocation" x="3747.826086956522" y="152.67857142857142"/>
         </scene>
-        <!--FeedVC-->
+        <!--Feed View Controller-->
         <scene sceneID="PiP-go-uDr">
             <objects>
-                <viewController id="TVD-SJ-wqF" customClass="FeedVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TVD-SJ-wqF" customClass="FeedViewController" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXx-pS-7g4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ibl-CU-FUZ">
-                                <rect key="frame" x="257" y="93.5" width="30" height="30"/>
+                                <rect key="frame" x="350" y="69.5" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.76862745099999996" green="0.84705882349999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ibl-CU-FUZ" secondAttribute="height" multiplier="1:1" id="LCj-2M-zec"/>
@@ -149,17 +145,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbV-pU-0rh">
-                                <rect key="frame" x="165" y="98" width="84" height="21"/>
+                                <rect key="frame" x="258" y="74" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lja-xA-Z03">
-                                <rect key="frame" x="20" y="127" width="374" height="638"/>
+                                <rect key="frame" x="20" y="103" width="560" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7u-nu-uYr">
-                                <rect key="frame" x="159.5" y="773" width="95" height="30"/>
+                                <rect key="frame" x="252.5" y="511" width="95" height="30"/>
                                 <state key="normal" title="To second VC"/>
                                 <connections>
                                     <segue destination="62g-jd-xiC" kind="show" id="2ke-m9-XUV"/>
@@ -190,23 +186,23 @@
             </objects>
             <point key="canvasLocation" x="2079.7101449275365" y="-571.20535714285711"/>
         </scene>
-        <!--Second FeedVC-->
+        <!--Second Feed View Controller-->
         <scene sceneID="Ehi-ic-Zk6">
             <objects>
-                <viewController id="62g-jd-xiC" customClass="SecondFeedVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="62g-jd-xiC" customClass="SecondFeedViewController" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j5L-hR-0uS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-wk-RHf">
-                                <rect key="frame" x="124.5" y="413" width="165" height="30"/>
+                                <rect key="frame" x="217.5" y="265" width="165" height="30"/>
                                 <state key="normal" title="To the third VC normally"/>
                                 <connections>
                                     <segue destination="6pz-1C-HfA" kind="show" id="fAk-Ft-HRS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25k-Th-7ox">
-                                <rect key="frame" x="74.5" y="455.5" width="265" height="30"/>
+                                <rect key="frame" x="167.5" y="312.5" width="265" height="30"/>
                                 <state key="normal" title="To the third VC with stack modification"/>
                                 <connections>
                                     <segue destination="6pz-1C-HfA" kind="show" identifier="stackModifySegue" id="nIy-X7-D5k"/>
@@ -227,16 +223,16 @@
             </objects>
             <point key="canvasLocation" x="2838" y="-571"/>
         </scene>
-        <!--Third FeedVC-->
+        <!--Third Feed View Controller-->
         <scene sceneID="KEQ-KO-vsv">
             <objects>
-                <viewController id="6pz-1C-HfA" customClass="ThirdFeedVC" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6pz-1C-HfA" customClass="ThirdFeedViewController" customModule="DZOtus_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kAV-M5-yve">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Feed VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmy-e5-kPg">
-                                <rect key="frame" x="152.5" y="437.5" width="109.5" height="21"/>
+                                <rect key="frame" x="245.5" y="289.5" width="109.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
