@@ -10,13 +10,13 @@ import UIKit
 
 @IBDesignable class CustomButton: UIButton {
 
-    @IBInspectable var bgColor : UIColor? {
+    @IBInspectable var bgColor: UIColor? {
         didSet {
             self.backgroundColor = bgColor
         }
     }
     
-    @IBInspectable var cornerRad : CGFloat = 0 {
+    @IBInspectable var cornerRad: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRad
         }

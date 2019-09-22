@@ -10,11 +10,11 @@ import UIKit
 
 class BenchmarkDataSource: UIViewController {
     
-    var benchmarkCollectionView : UICollectionView?
+    var benchmarkCollectionView: UICollectionView?
     //hardcoded number of cells for demonstration only
     let numberOfCells = 15
     
-    var timerManagers : [TimerManager] = []
+    var timerManagers: [TimerManager] = []
     let formatter = DateComponentsFormatter()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -52,7 +52,7 @@ extension BenchmarkDataSource: UICollectionViewDataSource {
     
     //some builder for stackview
     func fillStackViewWithSomeViews() -> [UIView] {
-        var stackViewContent : [UIView] = []
+        var stackViewContent: [UIView] = []
         let numberOfViews = 3
         let colors = [UIColor.green,UIColor.blue,UIColor.orange]
         let label = UILabel()

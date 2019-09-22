@@ -14,11 +14,11 @@ protocol TimerManagerDelegate {
 
 class TimerManager {
     
-    var timer : Timer?
+    var timer: Timer?
     var index = 0
-    var currentTime : TimeInterval = 0
+    var currentTime: TimeInterval = 0
     var timerIsOn = false
-    var delegate : TimerManagerDelegate?
+    var delegate: TimerManagerDelegate?
     
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onFire), userInfo: nil, repeats: true)

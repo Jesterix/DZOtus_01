@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
                                  StatusBarDarkBehavior()])
     }
   
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         if isBlackBackground {
             return .lightContent
         }

@@ -44,7 +44,7 @@ struct HideNavigationBarBehavior: ViewControllerLifecycleBehavior {
 
 
 final class DateTimerBehavior: ViewControllerLifecycleBehavior {
-    var timer : Timer?
+    var timer: Timer?
     func afterAppearing(_ viewController: UIViewController) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimed), userInfo: nil, repeats: true)
     }

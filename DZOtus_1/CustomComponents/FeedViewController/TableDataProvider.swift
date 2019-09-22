@@ -11,7 +11,7 @@ import UIKit
 
 class TableDataProvider {
     
-    var data : [String] = []
+    var data: [String] = []
 
     func getData() {
         for i in 1...20 {

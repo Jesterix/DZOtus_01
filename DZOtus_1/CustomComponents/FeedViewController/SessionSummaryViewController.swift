@@ -10,7 +10,7 @@ import UIKit
 
 class SessionSummaryViewController: UIViewController {
 
-    var labelText : String?
+    var labelText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

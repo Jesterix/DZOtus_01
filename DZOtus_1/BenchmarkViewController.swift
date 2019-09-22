@@ -12,7 +12,7 @@ class BenchmarkViewController: UIViewController {
     
     private let chessLayout = ChessLayout()
     private var isChess = true
-    private var defaultLayout : UICollectionViewLayout?
+    private var defaultLayout: UICollectionViewLayout?
     
     var dataProvider = BenchmarkDataSource(nibName: nil, bundle: nil)
     
@@ -57,7 +57,7 @@ class BenchmarkViewController: UIViewController {
     
 }
 
-extension BenchmarkViewController : CustomCollectionViewDelegate {
+extension BenchmarkViewController: CustomCollectionViewDelegate {
     func numberOfItemsInCollectionView() -> Int {
         return dataProvider.timerManagers.count
     }
