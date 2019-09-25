@@ -26,6 +26,7 @@
 		5E91A5542323B7EA008D1355 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5532323B7EA008D1355 /* ProfileViewController.swift */; };
 		5E91A5562323D563008D1355 /* ThirdFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5552323D563008D1355 /* ThirdFeedViewController.swift */; };
 		5E91A5582323D5E8008D1355 /* SecondFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91A5572323D5E8008D1355 /* SecondFeedViewController.swift */; };
+		5EA29A2C2338961C00F9710E /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA29A2B2338961C00F9710E /* PieChartView.swift */; };
 		5EC404AE232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC404AD232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		5E91A5532323B7EA008D1355 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5E91A5552323D563008D1355 /* ThirdFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdFeedViewController.swift; sourceTree = "<group>"; };
 		5E91A5572323D5E8008D1355 /* SecondFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFeedViewController.swift; sourceTree = "<group>"; };
+		5EA29A2B2338961C00F9710E /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = DZOtus_1/CustomComponents/PieChartView.swift; sourceTree = SOURCE_ROOT; };
 		5EC404AD232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StackAndTimerCollectionViewCell.swift; path = ../StackAndTimerCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			children = (
 				5E91A5512323B0FE008D1355 /* BenchmarkViewController.swift */,
 				5E0E9D43232FC869000FBEA3 /* BenchmarkDataSource.swift */,
+				5EA29A2B2338961C00F9710E /* PieChartView.swift */,
 				5E097576233680AF00FAF3A0 /* CustomCollectionViewLayouts */,
 				5E2E17C32330B43700BFCE47 /* TimerManager.swift */,
 				5EC404AD232FBCB70004FE3D /* StackAndTimerCollectionViewCell.swift */,
@@ -230,6 +233,7 @@
 				5E17D3CA23180A3400D41893 /* ComponentView.swift in Sources */,
 				5E2E17C42330B43700BFCE47 /* TimerManager.swift in Sources */,
 				5E91A5522323B0FE008D1355 /* BenchmarkViewController.swift in Sources */,
+				5EA29A2C2338961C00F9710E /* PieChartView.swift in Sources */,
 				5E12B54E2316ECA80091A7CF /* AppDelegate.swift in Sources */,
 				5E3024C5232A922800550C7C /* SessionSummaryViewController.swift in Sources */,
 				5E3024C3232A89AC00550C7C /* TableDataProvider.swift in Sources */,

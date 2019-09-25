@@ -11,6 +11,7 @@ import UIKit
 class StackAndTimerCollectionViewCell: UICollectionViewCell {
     
     var timerLabel: UILabel?
+    var pieChart = PieChartView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,13 +31,21 @@ class StackAndTimerCollectionViewCell: UICollectionViewCell {
         label.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
         label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
+        pieChart.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(pieChart)
+        pieChart.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        pieChart.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        pieChart.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        pieChart.heightAnchor.constraint(equalToConstant: 100).isActive  = true
         
         let stackView = self.createStackView()
         self.addSubview(stackView)
-        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: pieChart.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         stackView.topAnchor.constraint(equalTo: label.bottomAnchor).isActive = true
+        
+        
     }
     
     // MARK: - a builder for stackview

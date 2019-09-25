@@ -29,19 +29,28 @@ class BenchmarkViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(changeLayout))
+        let reloadPieCharts = UIBarButtonItem(title: "PieCharts", style: .done, target: self, action: #selector(refreshPieCharts))
+        let changeLayoutButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(changeLayout))
+        navigationItem.rightBarButtonItems = [changeLayoutButton, reloadPieCharts]
+        
         
         defaultLayout = collectionView.collectionViewLayout
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        for timer in dataProvider.timerManagers {
-            timer.stopTimer()
+        dataProvider.timerManager.stopTimer()
+        for timer in dataProvider.timers {
             timer.currentTime = 0
+            timer.isOn = false
         }
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if !dataProvider.timerManager.timerIsOn {
+            dataProvider.timerManager.startTimer()
+        }
         collectionView.reloadData()
     }
 
@@ -57,24 +66,40 @@ class BenchmarkViewController: UIViewController {
         }
     }
     
+    @objc func refreshPieCharts() {
+        dataProvider.refreshPieCharts()
+        for i in 0...dataProvider.numberOfCells {
+            if let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as? StackAndTimerCollectionViewCell {
+                cell.pieChart.startAnimation()
+//                cell.pieChart.stopAnimation()
+            }
+        }
+    }
+    
 }
 
 extension BenchmarkViewController: CustomCollectionViewDelegate {
     func numberOfItemsInCollectionView() -> Int {
-        return dataProvider.timerManagers.count
+        return dataProvider.timers.count
     }
 }
 
 extension BenchmarkViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataProvider.timerManagers.count
+        return dataProvider.timers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackPlusTimerCell", for: indexPath) as? StackAndTimerCollectionViewCell else { return UICollectionViewCell() }
         if let timerLabel = cell.timerLabel {
-            timerLabel.text = dataProvider.formatter.string(from: dataProvider.timerManagers[indexPath.row].currentTime)
+            timerLabel.text = dataProvider.formatter.string(from: dataProvider.timers[indexPath.row].currentTime)
         }
+        
+        //pie chart for displaying percent of timer's on time period
+        let segments = dataProvider.pieChartSegmentsForTimers[indexPath.row]
+        cell.pieChart.layer.sublayers?.removeAll()
+        cell.pieChart.createPie(withSize: cell.pieChart.frame, segments: segments)
+        cell.pieChart.layoutSubviews()
         return cell
     }
     
@@ -83,11 +108,7 @@ extension BenchmarkViewController: UICollectionViewDataSource {
 
 extension BenchmarkViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if dataProvider.timerManagers[indexPath.row].timerIsOn {
-            dataProvider.timerManagers[indexPath.row].stopTimer()
-        } else {
-            dataProvider.timerManagers[indexPath.row].startTimer()
-        }
+        dataProvider.timers[indexPath.row].isOn.toggle()
     }
 
 }
