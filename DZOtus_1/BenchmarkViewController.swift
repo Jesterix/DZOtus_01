@@ -11,7 +11,7 @@ import UIKit
 class BenchmarkViewController: UIViewController {
     
     private let chessLayout = ChessLayout()
-    private var isChess = true
+    private var isChess = false
     private var defaultLayout: UICollectionViewLayout?
     
     var dataProvider = BenchmarkDataSource()
@@ -33,7 +33,6 @@ class BenchmarkViewController: UIViewController {
         let changeLayoutButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(changeLayout))
         navigationItem.rightBarButtonItems = [changeLayoutButton, reloadPieCharts]
         
-        
         defaultLayout = collectionView.collectionViewLayout
     }
     
@@ -43,8 +42,6 @@ class BenchmarkViewController: UIViewController {
             timer.currentTime = 0
             timer.isOn = false
         }
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +50,6 @@ class BenchmarkViewController: UIViewController {
         }
         collectionView.reloadData()
     }
-
     
     @objc func changeLayout() {
         isChess.toggle()
@@ -67,15 +63,13 @@ class BenchmarkViewController: UIViewController {
     }
     
     @objc func refreshPieCharts() {
-        dataProvider.refreshPieCharts()
         for i in 0...dataProvider.numberOfCells {
             if let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as? StackAndTimerCollectionViewCell {
                 cell.pieChart.startAnimation()
-//                cell.pieChart.stopAnimation()
             }
         }
+        dataProvider.refreshPieCharts()
     }
-    
 }
 
 extension BenchmarkViewController: CustomCollectionViewDelegate {

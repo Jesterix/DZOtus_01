@@ -69,15 +69,32 @@ class BenchmarkDataSource {
 
 extension BenchmarkDataSource: TimerManagerDelegate {
     func timerChanged() {
-        var itemsToReload: [IndexPath] = []
+        //figure out where to update timer label
+        var indexPathsToReload: [IndexPath] = []
         for i in 0...timers.count - 1 {
             if timers[i].isOn {
                 timers[i].currentTime += 1
-                itemsToReload.append(IndexPath(row: i, section: 0))
+                indexPathsToReload.append(IndexPath(row: i, section: 0))
             }
         }
-        if itemsToReload.count != 0 {
-            benchmarkCollectionView?.reloadItems(at: itemsToReload)
+        //figure out where animation is running to prevent animation from being stopped due to updating of cell
+        var indexPathsWithoutAnimationRunning: [IndexPath] = []
+        for indexPath in indexPathsToReload {
+            if let cell = benchmarkCollectionView?.cellForItem(at: indexPath) as? StackAndTimerCollectionViewCell {
+                var animationIsOn = false
+                for segment in cell.pieChart.layers {
+                    if segment.isAnimating {
+                       animationIsOn = true
+                    }
+                }
+                if !animationIsOn {
+                    indexPathsWithoutAnimationRunning.append(indexPath)
+                }
+            }
+        }
+        //reload needed cells
+        if indexPathsWithoutAnimationRunning.count != 0 {
+            benchmarkCollectionView?.reloadItems(at: indexPathsWithoutAnimationRunning)
         }
     }
     

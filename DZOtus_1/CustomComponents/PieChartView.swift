@@ -16,13 +16,14 @@ struct Segment {
 
 class PieChartView: UIView {
 
-    var layers: [CAShapeLayer] = []
+    var layers: [SegmentShapeLayer] = []
     var keyFrameAnimations: [CAKeyframeAnimation] = []
     
     private lazy var textAttributes: [NSAttributedString.Key: Any] = [
         .font               : UIFont.systemFont(ofSize: 14),
         .foregroundColor    : UIColor.black
     ]
+    
     
 
     func createPie(withSize: CGRect, segments: [Segment]){
@@ -34,45 +35,32 @@ class PieChartView: UIView {
         let fullCircleWeight = segments.reduce(0){$0 + $1.weight}
         
         for segment in segments {
-            self.createSegment(cirleCenter: centerPoint, radius: radius, startAngle: &startAngle, fillColor: segment.color, text: segment.text, angle: (segment.weight / fullCircleWeight) * 2 * .pi)
+            self.createSegment(cirleCenter: centerPoint, radius: radius, startAngle: &startAngle, color: segment.color, text: segment.text, angle: (segment.weight / fullCircleWeight) * 2 * .pi)
         }
 
     }
     
     
-    func setupDesignOfShapeLayer(withColor: UIColor) -> CAShapeLayer {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.bounds = bounds
-        shapeLayer.strokeColor = UIColor.black.cgColor
-        shapeLayer.fillColor = withColor.cgColor
-        shapeLayer.lineWidth = 1
-        shapeLayer.lineCap = .round
-        shapeLayer.anchorPoint = .zero
+    func setupDesignOfShapeLayer(withColor: UIColor, radius: CGFloat) -> SegmentShapeLayer {
+        let shapeLayer = SegmentShapeLayer()
+        shapeLayer.strokeColor = withColor.cgColor
+        shapeLayer.lineWidth = radius
         return shapeLayer
     }
+
     
-    
-    func createSegment(cirleCenter: CGPoint, radius: CGFloat, startAngle: inout CGFloat, fillColor: UIColor, text: String, angle: CGFloat){
+    func createSegment(cirleCenter: CGPoint, radius: CGFloat, startAngle: inout CGFloat, color: UIColor, text: String, angle: CGFloat){
         
         //init layer
-        let segmentShapeLayer = setupDesignOfShapeLayer(withColor: fillColor)
+        let segmentShapeLayer = setupDesignOfShapeLayer(withColor: color, radius: radius)
         layer.addSublayer(segmentShapeLayer)
         self.layers.append(segmentShapeLayer)
         
-        
-        //make keyframe values for animation
-        var paths: [CGPath] = []
-        let animationDuration: CFTimeInterval = 1
-        let framesPerSecond = 60
-        let numberOfFrames = Int(animationDuration * Double(framesPerSecond))
-        for frame in 1...numberOfFrames {
-            let path = UIBezierPath()
-            let animationEndAngle = angle / CGFloat(numberOfFrames) * CGFloat(frame)
-            path.addArc(withCenter: cirleCenter, radius: radius, startAngle: startAngle, endAngle: startAngle + animationEndAngle, clockwise: true)
-            path.addLine(to: cirleCenter)
-            path.close()
-            paths.append(path.cgPath)
-        }
+        //draw segment with line
+        let path = UIBezierPath()
+        let animationEndAngle = angle
+        path.addArc(withCenter: cirleCenter, radius: radius / 2, startAngle: startAngle, endAngle: startAngle + animationEndAngle, clockwise: true)
+        segmentShapeLayer.path = path.cgPath
         
         //adding text
         let textLayer = CATextLayer()
@@ -82,33 +70,30 @@ class PieChartView: UIView {
         textLayer.frame = textRect
         textLayer.string = NSAttributedString(string: text, attributes: textAttributes)
         layer.addSublayer(textLayer)
-    
-        //add keyFrame animation
-        let keyFrameAnimation = CAKeyframeAnimation(keyPath: "path")
-        keyFrameAnimation.values = paths
-        keyFrameAnimation.duration = animationDuration
-        keyFrameAnimation.repeatCount = 1
-        keyFrameAnimations.append(keyFrameAnimation)
-    
-        //last frame
-        segmentShapeLayer.path = paths.last
         
         startAngle += angle
     }
     
     
     func startAnimation() {
+        
+        let arcAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        arcAnimation.duration = 0.5
+        arcAnimation.fromValue = 0
+        arcAnimation.toValue = 1
+        
         for i in 0...layers.count - 1 {
-            layers[i].add(keyFrameAnimations[i], forKey: "keyFrameAnimation")
+            layers[i].add(arcAnimation, forKey: "animate")
+            arcAnimation.delegate = layers[i]
         }
     }
     
     func stopAnimation() {
-//        shapeLayer.removeAnimation(forKey: "drawingAnimation")
-//        layer.removeAnimation(forKey: "rotationAnimation")
         layer.removeAllAnimations()
     }
 }
+
+
 
 
 

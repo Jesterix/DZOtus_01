@@ -22,7 +22,7 @@ class StackAndTimerCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         setup()
     }
-    
+        
     func setup(){
         timerLabel = UILabel()
         guard let label = timerLabel else { return }
@@ -30,13 +30,8 @@ class StackAndTimerCollectionViewCell: UICollectionViewCell {
         self.addSubview(label)
         label.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
         label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
-        pieChart.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(pieChart)
-        pieChart.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        pieChart.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        pieChart.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        pieChart.heightAnchor.constraint(equalToConstant: 100).isActive  = true
+
+        pieChartSetup()
         
         let stackView = self.createStackView()
         self.addSubview(stackView)
@@ -45,17 +40,29 @@ class StackAndTimerCollectionViewCell: UICollectionViewCell {
         stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         stackView.topAnchor.constraint(equalTo: label.bottomAnchor).isActive = true
         
-        
+        layoutIfNeeded()
+    }
+    
+    func pieChartSetup(){
+        pieChart.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(pieChart)
+        pieChart.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        pieChart.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        pieChart.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        pieChart.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
     }
     
     // MARK: - a builder for stackview
     func fillStackViewWithSomeViews() -> [UIView] {
         var stackViewContent: [UIView] = []
-        let numberOfViews = 3
-        let colors = [UIColor.green, UIColor.blue, UIColor.orange]
+        let colors = [UIColor.green, UIColor.red]
+        let numberOfViews = colors.count
         let label = UILabel()
-        label.text = "StackView"
+        label.text = "Timer"
         stackViewContent.append(label)
+        let anotherLabel = UILabel()
+        anotherLabel.text = "on/off"
+        stackViewContent.append(anotherLabel)
         for i in 1...numberOfViews {
             let viewInStack = UIView()
             viewInStack.backgroundColor = colors[i-1]
@@ -66,7 +73,7 @@ class StackAndTimerCollectionViewCell: UICollectionViewCell {
     
     func createStackView() -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: self.fillStackViewWithSomeViews())
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
