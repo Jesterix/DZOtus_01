@@ -63,12 +63,21 @@ class BenchmarkViewController: UIViewController {
     }
     
     @objc func refreshPieCharts() {
-        for i in 0...dataProvider.numberOfCells {
-            if let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as? StackAndTimerCollectionViewCell {
-                cell.pieChart.startAnimation()
+        dataProvider.refreshPieCharts()
+        print("dataProvider segment_0 weight: \(dataProvider.pieChartSegmentsForTimers[0][0].weight)")
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            print("reloadData")
+            DispatchQueue.main.async {
+                for i in 0...self.dataProvider.numberOfCells {
+                    if let cell = self.collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as? StackAndTimerCollectionViewCell {
+                        cell.pieChart.startAnimation()
+                        print("startAnim")
+                    }
+                }
             }
         }
-        dataProvider.refreshPieCharts()
+
     }
 }
 
@@ -94,6 +103,7 @@ extension BenchmarkViewController: UICollectionViewDataSource {
         cell.pieChart.layer.sublayers?.removeAll()
         cell.pieChart.segments = segments
         cell.pieChart.layoutSubviews()
+        print("cell_0 segment weight: \(segments[0].weight)")
         return cell
     }
     

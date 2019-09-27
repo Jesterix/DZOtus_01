@@ -39,6 +39,7 @@ class PieChartView: UIView {
     func createPie() {
         // new
         layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+        layers.removeAll()
         
         let radius = min(bounds.width, bounds.height) * 0.5
         var startAngle = -CGFloat.pi * 0.5
@@ -90,7 +91,7 @@ class PieChartView: UIView {
     func startAnimation() {
         
         let arcAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        arcAnimation.duration = 0.5
+        arcAnimation.duration = 1
         arcAnimation.fromValue = 0
         arcAnimation.toValue = 1
         
