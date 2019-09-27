@@ -16,6 +16,12 @@ struct Segment {
 
 class PieChartView: UIView {
 
+    var segments: [Segment] = [] {
+        didSet {
+            createPie()
+        }
+    }
+    
     var layers: [SegmentShapeLayer] = []
     var keyFrameAnimations: [CAKeyframeAnimation] = []
     
@@ -24,11 +30,17 @@ class PieChartView: UIView {
         .foregroundColor    : UIColor.black
     ]
     
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        createPie()
+    }
     
-
-    func createPie(withSize: CGRect, segments: [Segment]){
+    
+    func createPie() {
+        // new
+        layer.sublayers?.forEach { $0.removeFromSuperlayer() }
         
-        let radius = min(withSize.width, withSize.height) * 0.5
+        let radius = min(bounds.width, bounds.height) * 0.5
         var startAngle = -CGFloat.pi * 0.5
         let centerPoint = CGPoint(x: bounds.midX, y: bounds.midY)
         

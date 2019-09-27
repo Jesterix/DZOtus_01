@@ -29,6 +29,11 @@ class SegmentShapeLayer: CAShapeLayer {
         self.anchorPoint = .zero
     }
     
+    override init(layer: Any) {
+         super.init(layer: layer)
+         self.isAnimating = (layer as? SegmentShapeLayer)?.isAnimating ?? false
+     }
+    
 }
 
 extension SegmentShapeLayer: CAAnimationDelegate {

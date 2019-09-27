@@ -92,7 +92,7 @@ extension BenchmarkViewController: UICollectionViewDataSource {
         //pie chart for displaying percent of timer's on time period
         let segments = dataProvider.pieChartSegmentsForTimers[indexPath.row]
         cell.pieChart.layer.sublayers?.removeAll()
-        cell.pieChart.createPie(withSize: cell.pieChart.frame, segments: segments)
+        cell.pieChart.segments = segments
         cell.pieChart.layoutSubviews()
         return cell
     }
